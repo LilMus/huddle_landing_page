@@ -1,0 +1,123 @@
+$primary-color : hsl(257, 40%, 49%);
+$secondary-color : hsl(300, 69%, 71%);
+$text-color: #fff;
+
+$breakpoint-mobile: 1240px;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Poppins', sans-serif;
+
+@mixin transition{
+    transition-property: color,background-color, fill;
+    transition-duration: 0.3s;
+}
+
+html{
+    height:100%;
+    width: 100%;
+}
+
+body{
+    min-height: 100%;
+    margin:0px;
+    padding:0px;
+    background: url("../images/bg-desktop.svg") no-repeat, $primary-color;
+    background-size:cover;
+    display: flex;
+    flex-direction: column;
+    padding: 2% 5%;
+
+ }
+
+ header{
+    img{
+        height:50px;
+    }
+}
+
+ main{
+    .illustration svg{
+        
+    }
+     @media screen and (max-width:$breakpoint-mobile) {
+         flex-direction:column;
+         align-items: center;
+         width: 3%;
+         height: 3%;
+     }
+     display: flex;
+     justify-content: space-around;
+     color: $text-color;
+     margin-top: 5em;
+     box-sizing: border-box;
+     
+     aside{
+        margin-left:4rem;
+        @media screen and (max-width:$breakpoint-mobile){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+     }
+
+     h1{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 2.3em;
+     }
+
+     p{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color: darken($text-color, 10%);
+        font-size: 1.1em;
+     }
+ }
+
+a{
+    text-decoration: none;
+}
+
+ .button{
+    background-color: $text-color;
+    width: 10em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:$primary-color;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    border-radius: 40px;;
+    box-shadow: 0px 5px 10px lighten(black, 20%);
+    &:hover{
+        background-color: $secondary-color;
+        color: $text-color;
+        @include transition();
+    }
+}
+
+ footer{
+     width: 100%;
+     display: flex;
+     justify-content: flex-end;
+     @media screen and (max-width:$breakpoint-mobile) {
+        justify-content: center;
+        margin-top: 3em;
+    }
+     svg{
+        width: 35px;
+        height: 35px;
+        margin-left: 20px;
+        fill:white;
+        &:hover{
+            fill:$secondary-color;
+            @include transition();
+        }
+     }
+    
+ }
