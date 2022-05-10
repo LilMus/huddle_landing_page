@@ -25,30 +25,10 @@ main {
   justify-content: space-around;
   color: #fff;
   margin-top: 5em;
-  box-sizing: border-box;
-}
-@media screen and (max-width: 1240px) {
-  main {
-    flex-direction: column;
-    align-items: center;
-    width: 3%;
-    height: 3%;
-  }
-  main .illustration {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  width: 100%;
 }
 main aside {
   margin-left: 4rem;
-}
-@media screen and (max-width: 1240px) {
-  main aside {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 }
 main h1 {
   font-family: "Poppins", sans-serif;
@@ -60,6 +40,15 @@ main p {
   font-weight: 400;
   color: #e6e6e6;
   font-size: 1.1em;
+}
+
+.illustration {
+  width: 100%;
+}
+.illustration svg {
+  margin: 0px;
+  width: 100%;
+  height: auto;
 }
 
 a {
@@ -92,22 +81,42 @@ footer {
   display: flex;
   justify-content: flex-end;
 }
-@media screen and (max-width: 1240px) {
-  footer {
-    justify-content: center;
-    margin-top: 3em;
-  }
-}
-footer svg {
+
+svg {
   width: 35px;
   height: 35px;
   margin-left: 20px;
   fill: white;
 }
-footer svg:hover {
+svg:hover {
   fill: hsl(300deg, 69%, 71%);
   transition-property: color, background-color, fill;
   transition-duration: 0.3s;
+}
+
+@media screen and (max-width: 1300px) {
+  main {
+    flex-direction: column;
+  }
+  main aside {
+    text-align: center;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20%;
+  }
+  main a {
+    width: auto;
+  }
+  main .button {
+    width: 15em;
+    margin-top: 10%;
+  }
+
+  footer {
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

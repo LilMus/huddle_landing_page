@@ -2,13 +2,10 @@ $primary-color : hsl(257, 40%, 49%);
 $secondary-color : hsl(300, 69%, 71%);
 $text-color: #fff;
 
-$breakpoint-mobile: 1240px;
+$breakpoint-mobile: 1300px;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-// font-family: 'Open Sans', sans-serif;
-// font-family: 'Poppins', sans-serif;
 
 @mixin transition{
     transition-property: color,background-color, fill;
@@ -39,28 +36,14 @@ body{
 }
 
  main{
-    .illustration svg{
-        
-    }
-     @media screen and (max-width:$breakpoint-mobile) {
-         flex-direction:column;
-         align-items: center;
-         width: 3%;
-         height: 3%;
-     }
      display: flex;
      justify-content: space-around;
      color: $text-color;
      margin-top: 5em;
-     box-sizing: border-box;
-     
+     width: 100%;
+
      aside{
         margin-left:4rem;
-        @media screen and (max-width:$breakpoint-mobile){
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
      }
 
      h1{
@@ -76,6 +59,15 @@ body{
         font-size: 1.1em;
      }
  }
+
+ .illustration{
+    width: 100%;
+    svg{
+        margin:0px;
+        width: 100%;
+        height: auto;
+    }
+}
 
 a{
     text-decoration: none;
@@ -105,9 +97,6 @@ a{
      width: 100%;
      display: flex;
      justify-content: flex-end;
-     @media screen and (max-width:$breakpoint-mobile) {
-        justify-content: center;
-        margin-top: 3em;
     }
      svg{
         width: 35px;
@@ -119,5 +108,28 @@ a{
             @include transition();
         }
      }
-    
- }
+
+@media screen and (max-width:$breakpoint-mobile) {
+    main{
+        flex-direction: column;
+        aside{
+            text-align: center;
+            margin: 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20%;
+        }
+        a{
+            width: auto;
+        }
+        .button{
+            width:15em;
+            margin-top: 10%;
+        }
+    }
+
+    footer{
+        justify-content: center;
+    }
+}
